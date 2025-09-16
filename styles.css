@@ -1245,7 +1245,7 @@ html, body { overflow-x: hidden; }
   #nav-menu{
     position: fixed !important;
     top:214px !important;
-    right:165px !important;
+    right:164px !important;
     width:min(92vw, 360px) !important;
     max-height: calc(100vh - 80px) !important;
     overflow:auto !important;
@@ -1341,6 +1341,7 @@ body.no-scroll{ overflow:hidden !important; }
 #copy-email:focus {
   outline:none;
 }
+
 
 
 
