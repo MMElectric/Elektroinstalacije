@@ -690,10 +690,9 @@ strong{ color:#eaf2ff }
 /* Naslov s pozadinom preko cijele širine */
 .ow-head {
   text-align: center;
-  padding: 15px 20px;
+  padding: 0px 20px;
   background: linear-gradient(180deg, #080e16 0%, #000000 100%);
   margin: 0;
-
 }
 /* === O NAMA & KAKO RADIMO ==== */
 .ow-head h2 {
@@ -734,7 +733,7 @@ strong{ color:#eaf2ff }
 /* Ploče/Tile (statika: bez hover efekta) */
 .ow-tile{
   position:relative;
-  min-height: 340px;
+  min-height: 40px;
   overflow:hidden;
   border:1px solid rgba(5, 5, 5, 0.952);
   box-shadow: 0 10px 28px rgba(0,0,0,.35);
@@ -806,7 +805,7 @@ strong{ color:#eaf2ff }
   background: linear-gradient(180deg, #0a0e16, rgba(10,14,22,.65) 65% rgba(10,14,22,.58));
   overflow: hidden;
 }
-.proj-inner{ width:100%; height:100%; margin:0; max-width:none; }
+.proj-inner{ width:100%; height:100%; margin:0; max-width:none;}
 .proj-stage{ position:relative; width:100%; height:95%; background:#0c1118; overflow:hidden; transform:translateY(-8px); }
 
 /* SLIDE */
@@ -1342,10 +1341,12 @@ body.no-scroll{ overflow:hidden !important; }
   outline:none;
 }
 
-
-
-
-
+.card .thumb img[alt=Dodatno]{
+  object-fit: cover;
+  object-position: center top;
+  height: 220px;
+  width: 100%;
+}
 
 
 
