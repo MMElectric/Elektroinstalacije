@@ -120,7 +120,7 @@
       <div class="proj-slide is-active"
            data-title="Zgrada 1"
            data-desc="Prva faza">
-           <img src="zgrada1.jpg" alt="Zgrada 2">
+           <img src="zgrada1.jpg" alt="Zgrada 1">
            <div class="proj-overlay"></div>
            </div>
 
@@ -148,7 +148,7 @@
 
       <div class="proj-slide"
            data-title="Zgrada 5"
-           data-desc="Gromobran">
+           data-desc="Postavljanje gromobran">
           <img src="zgrada5.jpg" alt="Zgrada 5">
           <div class="proj-overlay"></div>
           </div>
@@ -301,11 +301,21 @@
   </div>
 </footer>
 
+<div id="job-modal" class="modal" aria-hidden="true" role="dialog" aria-modal="true">
+  <div class="modal__backdrop" data-close></div>
+  <div class="modal__content" role="document">
+    <button class="modal__close" type="button" aria-label="Zatvori" data-close>×</button>
+    <img id="job-image" alt="" class="modal__image">
+    <h3 id="job-title" class="modal__title"></h3>
+    <p id="job-sub" class="modal__sub"></p>
+    <p id="job-desc" class="modal__desc"></p>
+  </div>
+</div>
 
-  <script src="script.js"></script>
+<script src="script.js"></script>
+
 </body>
 </html>
-
 
 
 
