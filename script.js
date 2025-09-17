@@ -117,3 +117,54 @@ if (copyEmail) {
   // inicijalni prikaz
   render(i);
 })();
+
+// === MODAL: opis posla na klik thumb ===
+(function () {
+  const thumbs = document.querySelectorAll('.proj-thumbs li');
+  const slides = document.querySelectorAll('.proj-stage .proj-slide');
+  const modal  = document.getElementById('job-modal');
+
+  if (!thumbs.length || !slides.length || !modal) return;
+
+  const imgEl = document.getElementById('job-image');
+  const tEl   = document.getElementById('job-title');
+  const sEl   = document.getElementById('job-sub');
+  const dEl   = document.getElementById('job-desc');
+
+  function openModal(data){
+    if (imgEl) { imgEl.src = data.img || ''; imgEl.alt = data.title || ''; }
+    if (tEl)   tEl.textContent = data.title || '';
+    if (sEl)   sEl.textContent = data.sub   || '';
+    if (dEl)   dEl.textContent = data.desc  || '';
+    modal.classList.add('is-open');
+    modal.setAttribute('aria-hidden','false');
+    document.body.classList.add('no-scroll');
+  }
+  function closeModal(){
+    modal.classList.remove('is-open');
+    modal.setAttribute('aria-hidden','true');
+    document.body.classList.remove('no-scroll');
+  }
+
+  thumbs.forEach((thumb, i) => {
+    thumb.addEventListener('click', (e) => {
+      e.preventDefault?.();
+      const slide = slides[i];
+      if (!slide) return;
+      openModal({
+        title: slide.getAttribute('data-title'),
+        sub:   slide.getAttribute('data-desc'),
+        desc:  slide.getAttribute('data-job'),
+        img:   (slide.querySelector('img') || {}).src
+      });
+    });
+  });
+
+  // zatvori klikom na backdrop / X / ESC
+  modal.addEventListener('click', (e) => {
+    if (e.target.dataset.close !== undefined) closeModal();
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeModal();
+  });
+})();
